@@ -1,0 +1,152 @@
+Uso de "for"
+El bucle FOR se utiliza para repetir una o más instrucciones un determinado número de veces. De entre todos los bucles, el FOR se suele utilizar cuando sabemos seguro el número de veces que queremos que se ejecute. La sintaxis del bucle for se muestra a 
+Por ejemplo si queremos escribir los número del 1 al 1.000 de dos en dos se escribirá el siguiente bucle.
+for (i=1;i<=1000;i+=2) 
+   	document.write(i)
+
+Ejercicio de ejemplo del bucle for
+Vamos a hacer una pausa para asimilar el bucle for con un ejercicio que no encierra ninguna dificultad si hemos entendido el funcionamiento del bucle.
+
+Se trata de hacer un bucle que escriba en una página web los encabezamientos desde <H1> hasta <H6> con un texto que ponga "Encabezado de nivel x".
+
+Lo que deseamos escribir en una página web mediante Javascript es lo siguiente:
+
+<H1>Encabezado de nivel 1</H1> 
+<H2>Encabezado de nivel 2</H2> 
+<H3>Encabezado de nivel 3</H3> 
+<H4>Encabezado de nivel 4</H4> 
+<H5>Encabezado de nivel 5</H5> 
+<H6>Encabezado de nivel 6</H6>
+
+Para ello tenemos que hacer un bucle que empiece en 1 y termine en 6 y en cada iteración escribiremos el encabezado que toca.
+
+for (i=1;i<=6;i++) { 
+   	document.write("<H" + i + ">Encabezado de nivel " + i + "</H" + i + ">") 
+}
+
+
+Uso de "While"
+Su finalidad es la de realizar bucles condicionales hasta que se cumpla cierta condición para que pare o se detenga dicho loop.
+Ejemplos de JavaScript while
+
+var frase = "";
+var n = 1;
+while (n < 10) 
+	{ 
+	frase += "El valor de n es " + n + "<br>"; 
+	n++;
+	}
+document.writeln(frase);
+
+Os explico el primer ejemplo:
+Declaramos las variables ‘frase’ (contendra el mensaje) y ‘n’ (recuento del bucle condicionante).
+Realizamos el bucle while mientras que el valor de ‘n’ se inferior a 10.
+Añadimos a la variable ‘frase’ un texto y el valor de ‘n’.
+Sumamos un valor a la variable ‘n’.
+Mostramos por pantalla el valor de la variable ‘frase’.
+
+
+Uso de "If"
+La sentencia if(...) evalúa la condición en los paréntesis, y si el resultado es verdadero (true), ejecuta un bloque de código.
+
+Por ejemplo:
+
+let year = prompt('¿En que año fué publicada la especificación ECMAScript-2015?', '');
+
+if (year == 2015) alert( '¡Estás en lo cierto!' );
+
+Aquí la condición es una simple igualdad (year == 2015), pero podría ser mucho más compleja.
+
+Si queremos ejecutar más de una sentencia, debemos encerrar nuestro bloque de código entre llaves:
+
+if (year == 2015) {
+  alert( "¡Es Correcto!" );
+  alert( "¡Eres muy inteligente!" );
+}
+Recomendamos encerrar nuestro bloque de código entre llaves {} siempre que se utilice la sentencia if, incluso si solo se va a ejecutar una sola sentencia. Al hacerlo mejoramos la legibilidad.
+
+
+
+Uso de "Case"
+La sentencia switch evalúa una expresión, compara su resultado con valores de cada caso (case) y ejecuta la sentencia asociada con el valor de case coincidente.
+
+A continuación, se ilustra la sintaxis de la instrucción switch:
+
+switch (expresión) {
+    case value1:
+        statement1;
+        break;
+    case value2:
+        statement2;
+        break;
+    case value3:
+        statement3;
+        break;
+    default:
+        statement;
+}
+
+Cómo funciona.
+
+Primero, evalúe la expresión dentro de los paréntesis después de la palabra clave switch.
+En segundo lugar, compare el resultado de la expresión con el valor1, valor2, … en el case que se ramifique de arriba hacia abajo. La sentencia switch utiliza la comparación estricta (===).
+Tercero, ejecute la declaración en la rama del case donde el resultado de la expresión es igual al valor que sigue a la palabra clave case. La sentencia break termina la ejecución de la sentencia switch. Si omites la declaración break, la ejecución del código pasa de la rama del case que coincide con la expresión a la siguiente. Si el resultado de la expresión no es estrictamente igual a no coincide con ningún valor, la declaración de switch ejecutará la declaración en la rama por default.
+La declaración switch dejará de comparar el resultado de la expresión con los valores en cada case restantes siempre que encuentre una coincidencia.
+
+La sentencia switch es como la sentencia if…else…if. Pero tiene una sintaxis más legible. En la práctica, a menudo se utiliza una sentencia switch para reemplazar una sentencia compleja if...else...if para hacer que el código sea más legible.
+
+Técnicamente, la sentencia switch es equivalente a la siguiente sentencia if...else...if:
+
+if (expression === value1) {
+  statement1;
+} else if (expression === value2) {
+  statement2;
+} else if (expression === value3) {
+  statement3;
+} else {
+  statement;
+}
+
+Usando la switch case de JavaScript para obtener el día de la semana
+El siguiente ejemplo usa la instrucción switch para obtener el día de la semana en función de un número de día:
+
+let day = 3;
+let dayName;
+
+switch (day) {
+  case 1:
+    dayName = 'Domingo';
+    break;
+  case 2:
+    dayName = 'Lunes';
+    break;
+  case 3:
+    dayName = 'Martes';
+    break;
+  case 4:
+    dayName = 'Miércoles';
+    break;
+  case 5:
+    dayName = 'Jueves';
+    break;
+  case 6:
+    dayName = 'Viernes';
+    break;
+  case 7:
+    dayName = 'Sábado';
+    break;
+  default:
+    dayName = 'Día incorrecto';
+}
+
+console.log(dayName); // Martes
+Resultado:
+
+Martes
+Cómo funciona.
+
+Primero, declaras la variable del día que contiene el número de día y la variable de nombre de día (dayName).
+
+En segundo lugar, obtiene el día de la semana en función del número de día mediante la instrucción switch. Si el día es 1, el día de la semana es el domingo. Si el día es 2, el día de la semana es lunes, y así sucesivamente.
+
+Tercero, se envía el día de la semana a la consola.
